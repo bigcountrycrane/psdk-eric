@@ -236,7 +236,7 @@ const MySheet2 = new Sheet('Students',
   //   }
   // })
 
-  dob: SmartDateField({
+  dob: DateField({
     label: 'Birthday'
   }),
 
