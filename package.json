@@ -24,7 +24,8 @@
         "create:env": "flatfile create:env -n",
         "lint": "TIMING=1 eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
         "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-        "test": "jest --runInBand --detectOpenHandles --forceExit --passWithNoTests"
+        "test": "jest --runInBand --detectOpenHandles --forceExit --passWithNoTests",
+        "pray-and-deploy": "flatfile publish ./src/index.ts && flatfile pubsub ./src/listeners/upload-listener.ts"
     },
     "devDependencies": {
         "@flatfile/configure": "^0.5.16",
@@ -43,6 +44,7 @@
     },
     "dependencies": {
         "@flatfile/api-beta": "^0.1.5",
+        "@flatfile/listener": "^0.0.2",
         "awesome-phonenumber": "^5.1.0",
         "chrono-node": "^2.4.1",
         "date-fns": "^2.29.3",
